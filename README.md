@@ -2,7 +2,7 @@
 
   <br />
   <p>
-    <a href="https://www.yuvraj.bio"><img src="assets/readme-photo.png" alt="AI Portfolio Banner" width="100%"/></a>
+    <a href="https://www.Asad.bio"><img src="assets/readme-photo.png" alt="AI Portfolio Banner" width="100%"/></a>
   </p>
   <br />
 
@@ -28,7 +28,7 @@
 
 ### **About The Project** 💡
 
-Static portfolios are a thing of the past. They present a one-sided, lifeless view of a developer's journey. I decided to build **[yuvraj.bio](https://www.yuvraj.bio)** to break that mold.
+Static portfolios are a thing of the past. They present a one-sided, lifeless view of a developer's journey. I decided to build **[Asad.bio](https://www.Asad.bio)** to break that mold.
 
 This project is an **AI-powered, interactive portfolio** that transforms the "About Me" page into a dynamic, engaging conversation. Instead of forcing recruiters, developers, and friends to scroll endlessly through information, it invites them to ask questions and receive answers tailored specifically to them.  
 
@@ -65,15 +65,14 @@ Want to get this project running on your local machine? Follow these simple step
 #### **Prerequisites**
 -   Node.js (v18 or higher)
 -   pnpm package manager
--   Mistral API Token
 -   GitHub API Token
 
 #### **Local Setup**
 
 1.  **Clone the repository:**
     ```sh
-    git clone https://github.com/yuvraj0412s/Yuvi_portfolio.git
-    cd Yuvi_portfolio
+    git clone https://github.com/chasadch/Ai-portfolio.git
+    cd Asad
     ```
 
 2.  **Install dependencies:**
