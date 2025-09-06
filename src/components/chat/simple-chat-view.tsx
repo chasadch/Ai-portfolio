@@ -39,13 +39,13 @@ export function SimplifiedChatView({
 
   // Extract tool invocations that are in "result" state
   const toolInvocations =
-    message.parts
+    (message as any).parts
       ?.filter(
-        (part) =>
+        (part: any) =>
           part.type === 'tool-invocation' &&
           part.toolInvocation?.state === 'result'
       )
-      .map((part) =>
+      .map((part: any) =>
         part.type === 'tool-invocation' ? part.toolInvocation : null
       )
       .filter(Boolean) || [];
