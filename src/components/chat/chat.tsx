@@ -143,9 +143,12 @@ const Chat = () => {
         setLoadingSubmit(false);
         setIsTalking(true);
         if (videoRef.current) {
-          videoRef.current.play().catch((error) => {
-            console.error('Failed to play video:', error);
-          });
+          const playPromise = videoRef.current.play();
+          if (playPromise !== undefined) {
+            playPromise.catch((error) => {
+              console.error('Failed to play video:', error);
+            });
+          }
         }
       }
     },
@@ -241,9 +244,12 @@ const Chat = () => {
   useEffect(() => {
     if (videoRef.current) {
       if (isTalking) {
-        videoRef.current.play().catch((error) => {
-          console.error('Failed to play video:', error);
-        });
+        const playPromise = videoRef.current.play();
+        if (playPromise !== undefined) {
+          playPromise.catch((error) => {
+            console.error('Failed to play video:', error);
+          });
+        }
       } else {
         videoRef.current.pause();
       }
@@ -289,7 +295,7 @@ const Chat = () => {
             animationDuration={1.5}
             label="Star"
             size={'sm'}
-            repoUrl="https://github.com/yuvraj0412s"
+            repoUrl="https://github.com/chasadch"
           />
         </div>
       </div>
@@ -392,12 +398,12 @@ const Chat = () => {
 </div>
 
         <a
-          href="https://linkedin.com/in/yuvraj-singh-77601827a"
+          href=" www.linkedin.com/in/muhammad-asad-arshad"
           target="_blank"
           rel="noopener noreferrer"
           className="fixed right-3 bottom-0 z-10 mb-4 hidden cursor-pointer items-center gap-2 rounded-xl px-4 py-2 text-sm hover:underline md:block"
         >
-          @yuvraj-singh
+        @muhammad-asad-arshad
         </a>
       </div>
     </div>

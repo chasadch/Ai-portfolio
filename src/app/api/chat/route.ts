@@ -1,4 +1,3 @@
-import { mistral } from '@ai-sdk/mistral';
 import { streamText } from 'ai';
 import { SYSTEM_PROMPT } from './prompt';
 import { getContact } from './tools/getContact';
@@ -10,6 +9,7 @@ import { getResume } from './tools/getResume';
 import { getSkills } from './tools/getSkills';
 import { getSports } from './tools/getSports';
 import { getWeather } from './tools/getWeather';
+import { openai } from '@ai-sdk/openai';
 
 export const maxDuration = 30;
 
@@ -29,6 +29,16 @@ function errorHandler(error: unknown) {
 
 export async function POST(req: Request) {
   try {
+    // Guard: if no OpenAI API key is configured, avoid calling the SDK and respond gracefully
+    if (!process.env.OPENAI_API_KEY || process.env.OPENAI_API_KEY.trim().length === 0) {
+      return Response.json(
+        {
+          error: 'OpenAI API key is not configured. Set OPENAI_API_KEY in your environment to enable chat.',
+        },
+        { status: 503 }
+      );
+    }
+
     const { messages } = await req.json();
     console.log('[CHAT-API] Incoming messages:', messages);
 
@@ -46,10 +56,9 @@ export async function POST(req: Request) {
       getWeather,
     };
 
-    const result = streamText({
-      model: mistral('mistral-large-latest'),
+    const result = await streamText({
+      model: openai('gpt-4o-mini'),
       messages,
-      toolCallStreaming: true,
       tools,
       maxSteps: 2,
     });

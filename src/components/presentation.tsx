@@ -7,13 +7,13 @@ import React from 'react';
 export function Presentation() {
   // Personal information
   const profile = {
-    name: 'Yuvraj Singh',
-    age: '22 years old',
-    location: 'Gurugram, India',
+    name: 'Muhammad Asad Arshad',
+    age: 'Computer Science Graduate',
+    location: 'Islamabad, Pakistan',
     // Add a newline character after the emoji
     description:
-      "Hey 👋\nI'm Yuvraj also known as Yuvi, building AI-powered experiences that talk back, think with you, and make static tech feel alive.",
-    src: '/profile-yuvi-03.jpeg',
+      "Hey 👋\nI'm Muhammad Asad Arshad, a Computer Science graduate from NUST building AI agents and interactive AI applications. I focus on shipping practical, scalable, context-aware solutions that improve user experience and automate workflows.",
+    src: '/Asad.jpg',
     fallbackSrc:
       'https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?q=80&w=3560&auto=format&fit=crop&ixlib=rb-4.0.3',
   };
@@ -103,7 +103,7 @@ export function Presentation() {
             transition={{ delay: 0.6, duration: 0.5 }}
             className="mt-4 flex flex-wrap gap-2"
           >
-            {['AI', 'Developer', 'Sport', 'SaaS Builder'].map(
+            {['AI/ML Engineer', 'Python', 'Data Science', 'Full-Stack'].map(
               (tag) => (
                 <span
                   key={tag}
